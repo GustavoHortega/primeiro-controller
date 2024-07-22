@@ -7,5 +7,10 @@
 </head>
 <body>
     <h1>rota raiz de pedidos ejs<%= nomeDoUsuario %></h1>
+    <ul>
+        <% pedidos.map((pedido) => { %>
+            <li>pedido do <%=pedido.cliente.nome%> <%=pedido.cliente.sobrenome%></li>
+        <% }) %>
+    </ul>
 </body>
 </html>

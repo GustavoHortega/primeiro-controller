@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const Pedido = require("./pedido")
+const PedidoSchema = require("./pedido");
+
+const Pedido = mongoose.model('pedido', PedidoSchema);
 
 const connect = () =>{
     mongoose.connect('mongodb://localhost:27017/ebacpizza');

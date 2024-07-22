@@ -1,10 +1,15 @@
 const express = require('express');
 
+const { Pedido } = require ('../models');
+
 const router = express.Router();
 
 router.get('/', (_,res) =>{
-    res.render('pedidos/index.ejs', {
-        nomeDoUsuario: "Gustavo",
+    Pedido.find({}).then((pedidos)=>{
+        res.render('pedidos/index', {
+            nomeDoUsuario: "Gustavo",
+            pedidos: pedidos,
+        })
     })
 })
 
