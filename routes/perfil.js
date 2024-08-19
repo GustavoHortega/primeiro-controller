@@ -1,12 +1,19 @@
 const express = require('express');
 
+const { Perfil } = require('../models');
+
 const router = express.Router();
 
-router.get('/',(_,res)=>{
-    res.render('perfil/index',{
-        nomeCompleto: "Gustavo Dellamare Hortega da Silva",
-        idade: "22",
+router.get('/', (req,res) =>{
+    Perfil.find({}).then((perfis) => {
+        res.render('perfil/index', {
+            perfil: perfis,
+        });
     })
+    .catch((err) => {
+        console.error('Erro ao buscar perfis:', err);
+        res.status(500).send('Erro interno do servidor');
+    });
 });
 
 module.exports = router;

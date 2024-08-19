@@ -16,11 +16,7 @@ app.set('view engine', 'ejs');
 app.use('/', routerPincipal);
 app.use('/pedidos', routerPedidos);
 app.use('/perfil', routerPerfil);
-
-// css config
-app.use('/styles', express.static('styles'));
-
-app.listen(porta, () =>{
+app.listen(porta, () => {
     connect();
 
     console.log(`servidor ouvindo na porta ${porta}`);

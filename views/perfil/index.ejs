@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/styles/perfil/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <div id="perfilArea">
-        <img src="/styles/perfil/4675159.png" alt="" style="text-align: center;">
-        <ul style="list-style: none;">
-            <li>Nome do aluno: <%= nomeCompleto %></li>
-            <br>
-            <li>Idade: <%= idade %></li>
-        </ul>
-        <a href="https://github.com/GustavoHortega/primeiro-controller"><button>Github</button></a>
-    </div>
+    <ul>
+        <% perfil.map((perfis) => { %>
+            <li>pedido do <%=perfis.nome%></li>
+            <li> <%= perfis.idade%></li>
+        <% }) %>
+    </ul>
 </body>
 </html>
